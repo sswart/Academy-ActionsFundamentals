@@ -24,6 +24,6 @@ jobs:
       - run: |
           echo "Output from the container action: $GREETING"
         env:
-          GREETING: ${{ steps.container-action.greeting }}
+          GREETING: ${{ steps.container-action.outputs.greeting }}
 
 
