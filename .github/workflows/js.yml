@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/javascript-action@main
-        name: 'js-action'
+        id: 'js-action'
         with: 
           milliseconds: 100
 
@@ -17,7 +17,7 @@ jobs:
           TIME: ${{ steps.js-action.outputs.time }}
 
       - uses: actions/container-action@main
-        name: 'container-action'
+        id: 'container-action'
         with: 
           who-to-greet: "Jesse"
 
