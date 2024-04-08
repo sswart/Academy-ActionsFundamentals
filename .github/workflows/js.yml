@@ -16,4 +16,12 @@ jobs:
         env: 
           TIME: ${{ steps.js-action.outputs.time }}
 
+      - uses: actions/container-action@main
+        name: 'container-action'
+        with: 
+          who-to-greet: "Jesse"
+
+      - run: |
+          echo "Output from the container action: ${{ steps.container-action.greeting }}"
+
 
