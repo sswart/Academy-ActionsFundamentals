@@ -22,6 +22,8 @@ jobs:
           who-to-greet: "Jesse"
 
       - run: |
-          echo "Output from the container action: ${{ steps.container-action.greeting }}"
+          echo "Output from the container action: $GREETING"
+        env:
+          GREETING: ${{ steps.container-action.greeting }}
 
 
