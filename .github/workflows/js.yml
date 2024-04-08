@@ -12,6 +12,8 @@ jobs:
           milliseconds: 100
 
       - run: |
-          echo "Output from the action: ${{ steps.js-action.outputs.time }}"
+          echo "Output from the action: $TIME"
+        env: 
+          TIME: ${{ steps.js-action.outputs.time }}
 
 
