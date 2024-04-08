@@ -1,0 +1,17 @@
+on:
+  workflow_dispatch:
+name: 'My workflow'
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/javascript-action@v1.0.1
+        name: 'js-action'
+        with: 
+          milliseconds: 100
+
+      - run: |
+          echo "Output from the action: ${{ steps.js-action.outputs.time }}"
+
+
